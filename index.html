@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link type="image/svg+xml" href="/favicon.svg" rel="icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>contact-form</title>
+  </head>
+  <body
+    class="font-karla relative grid min-h-screen items-center bg-green-200 text-base"
+  >
+    <!-- Success Message -->
+    <section
+      id="success-message"
+      class="absolute top-8 left-[50%] flex -translate-x-1/2 flex-col rounded-lg bg-green-600 p-6 text-white opacity-0 transition"
+    >
+      <div class="flex gap-3">
+        <img
+          src="./src/assets/img/icon-success-check.svg"
+          alt="Success check"
+        />
+        <h2>Message Sent!</h2>
+      </div>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </section>
+
+    <!-- Form -->
+    <form
+      class="mx-auto grid w-9/10 max-w-160 gap-6 rounded-2xl bg-white p-8 md:grid-cols-2"
+      id="form"
+      novalidate
+    >
+      <h1 class="text-3xl font-bold text-gray-900 md:col-span-2">Contact Us</h1>
+
+      <!-- First Name -->
+      <div class="flex flex-col gap-2">
+        <label for="first-name"
+          >First Name<span class="text-green-600"> *</span></label
+        >
+        <input
+          class="cursor-pointer rounded-lg border border-gray-500 p-3 focus:border-green-600 focus:outline-none"
+          id="first-name"
+          data-validar
+          type="text"
+          autocomplete="given-name"
+          required
+        />
+        <p class="text-red hidden" data-error-message>This field is required</p>
+      </div>
+
+      <!-- Last Name -->
+      <div class="flex flex-col gap-2">
+        <label for="last-name"
+          >Last Name<span class="text-green-600"> *</span></label
+        >
+        <input
+          class="cursor-pointer rounded-lg border border-gray-500 p-3 focus:border-green-600 focus:outline-none"
+          id="last-name"
+          data-validar
+          type="text"
+          autocomplete="family-name"
+          required
+        />
+        <p class="text-red hidden" data-error-message>This field is required</p>
+      </div>
+
+      <!-- Email address -->
+      <div class="flex flex-col gap-2 md:col-span-2">
+        <label for="email"
+          >Email Address<span class="text-green-600"> *</span></label
+        >
+        <input
+          class="cursor-pointer rounded-lg border border-gray-500 p-3 focus:border-green-600 focus:outline-none"
+          id="email"
+          data-validar
+          type="email"
+          autocomplete="email"
+          required
+        />
+        <p class="text-red hidden" data-error-message>
+          Please enter a valid email address
+        </p>
+      </div>
+
+      <!-- Query Type -->
+      <fieldset class="grid gap-2 md:col-span-2">
+        <div>
+          <legend>Query Type<span class="text-green-600"> *</span></legend>
+        </div>
+        <div class="grid gap-2 md:grid-cols-2">
+          <label
+            class="flex cursor-pointer gap-3 rounded-lg border border-gray-500 p-2 has-checked:border-green-600 has-checked:bg-green-200"
+          >
+            <input
+              class="cursor-pointer accent-green-600"
+              name="query-type"
+              type="radio"
+              value="general-enquiry"
+              required
+            />
+            General Enquiry
+          </label>
+          <label
+            class="flex cursor-pointer gap-3 rounded-lg border border-gray-500 p-2 has-checked:border-green-600 has-checked:bg-green-200"
+          >
+            <input
+              class="cursor-pointer accent-green-600"
+              name="query-type"
+              type="radio"
+              value="support-request"
+            />
+            Support Request
+          </label>
+          <p class="text-red hidden" id="query-type-error">
+            Please select a query type
+          </p>
+        </div>
+      </fieldset>
+
+      <!-- Message-->
+      <div class="flex flex-col gap-2 md:col-span-2">
+        <label for="message"
+          >Message <span class="text-green-600"> *</span></label
+        >
+        <textarea
+          class="h-30 cursor-pointer resize-none rounded-lg border border-gray-500 p-3 focus:border-green-600 focus:outline-none"
+          id="message"
+          data-validar
+          required
+        ></textarea>
+        <p class="text-red hidden" data-error-message>This field is required</p>
+      </div>
+
+      <!-- Consent -->
+      <div
+        class="flex flex-row-reverse flex-wrap justify-end gap-2 md:col-span-2"
+      >
+        <label class="cursor-pointer" for="consent">
+          I consent to being contacted by the team
+          <span class="text-green-600">*</span>
+        </label>
+        <input
+          class="cursor-pointer accent-green-600"
+          id="consent"
+          data-validar
+          type="checkbox"
+          required
+        />
+        <p class="text-red hidden">
+          To submit this form, please consent to being contacted
+        </p>
+      </div>
+
+      <button
+        class="cursor-pointer rounded-lg bg-green-600 p-3 text-white md:col-span-2"
+        type="submit"
+        aria-label="Submit contact form"
+      >
+        Submit
+      </button>
+    </form>
+    <script src="/src/main.js" type="module"></script>
+  </body>
+</html>
