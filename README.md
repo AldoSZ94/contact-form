@@ -27,7 +27,7 @@ Se puso especial énfasis en:
 
 ## 🚀 Demo
 
-👉 _(agrega aquí tu link de Netlify o GitHub Pages cuando lo subas)_
+👉 _(link pendiente)_
 
 ---
 
